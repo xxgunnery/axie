@@ -1,0 +1,55 @@
+        axieData = axieData["data"]["axie"]
+        axieName = axieData["name"]
+        if axieName is None:
+            axieName = axieID
+        axieClass = axieData["class"]
+        if axieClass is None:
+            axieClass = "Egg"
+        axieHP = axieData["stats"]["hp"]
+        axieSpeed = axieData["stats"]["speed"]
+        axieSkill = axieData["stats"]["skill"]
+        axieMorale = axieData["stats"]["morale"]
+        axiePic = axieData["image"]
+
+        axieStatSum = str(axieHP + axieSpeed + axieSkill + axieMorale)
+        
+        axieHP = str(axieData["stats"]["hp"])
+        axieSpeed = str(axieData["stats"]["speed"])
+        axieSkill = str(axieData["stats"]["skill"])
+        axieMorale = str(axieData["stats"]["morale"])
+        
+        partNum = 0
+        moveNum = 0
+        for part in axieData["parts"]:
+            partAbilities = part["abilities"]
+            if part["abilities"] != []:
+                partAbilities = partAbilities[0]
+                if moveNum == 0:
+                        axieMove1 = partAbilities["name"]
+                        axieMove1Attack = partAbilities["attack"]
+                        axieMove1Defense = partAbilities["defense"]
+                        axieMove1Energy = partAbilities["energy"]
+                        axieMove1Desc = partAbilities["description"]
+                        moveNum += 1
+                elif moveNum == 1:
+                        axieMove2 = partAbilities["name"]
+                        axieMove2Attack = partAbilities["attack"]
+                        axieMove2Defense = partAbilities["defense"]
+                        axieMove2Energy = partAbilities["energy"]
+                        axieMove2Desc = partAbilities["description"]
+                        moveNum += 1
+                elif moveNum == 2:
+                        axieMove3 = partAbilities["name"]
+                        axieMove3Attack = partAbilities["attack"]
+                        axieMove3Defense = partAbilities["defense"]
+                        axieMove3Energy = partAbilities["energy"]
+                        axieMove3Desc = partAbilities["description"]
+                        moveNum += 1
+                elif moveNum == 3:
+                        axieMove4 = partAbilities["name"]
+                        axieMove4Attack = partAbilities["attack"]
+                        axieMove4Defense = partAbilities["defense"]
+                        axieMove4Energy = partAbilities["energy"]
+                        axieMove4Desc = partAbilities["description"]
+                        moveNum += 1
+            partNum += 1
